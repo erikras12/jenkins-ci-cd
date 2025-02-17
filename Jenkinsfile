@@ -15,7 +15,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Build'
-				sh 'node --version'
+				// sh 'node --version'
 				sh 'docker --version'
 				echo "Path: $Path"
 				echo "Build Number: $env.BUILD_NUMBER"
