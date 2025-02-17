@@ -52,10 +52,10 @@ pipeline {
 		}
 		stage('Build Docker Image') {
 			steps {
-				dockerImage = docker build --tls-verify=false -t erikrasniqi/currency-exchange-devops:$env.BUILD_Tag
-				// script {
-				// 	dockerImage = docker.build("erikrasniqi/currency-exchange-devops:${env.BUILD_Tag}")
-				// }
+				// dockerImage = docker build --tls-verify=false -t erikrasniqi/currency-exchange-devops:$env.BUILD_Tag
+				script {
+					dockerImage = docker.build("erikrasniqi/currency-exchange-devops:${env.BUILD_Tag}", "--tls-verify=false")
+				}
 			}
 		}
 		stage('Push Docker Image') {
