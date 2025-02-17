@@ -9,7 +9,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				echo 'Build'
-				sh 'node --version'
+				bat 'node --version'
 			}
 			post {
 				always {
