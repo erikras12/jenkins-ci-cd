@@ -3,6 +3,7 @@ pipeline {
 	agent {
 		docker {
 			image 'node:21.7'
+			args '--env DOCKER_TLS_CERTDIR='
 		}
 	}
 	stages {
